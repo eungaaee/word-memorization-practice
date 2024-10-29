@@ -153,7 +153,7 @@ void game() {
         print_wrong_indicator(wrongCnt);
 
         for (int i = 0; i < targetLength; i++) printf("%c ", inputField[i]);
-        printf("%d번째 시도 : ", try);
+        printf("\n%d번째 시도 : ", try);
 
         char c;
         c = getchar();
@@ -165,7 +165,7 @@ void game() {
 
     // game done
     // TODO: update message one more time
-    if (revealed == targetLength) printf("#####################\n### Congratulations!!! ###\n#####################\n");
+    if (revealed == targetLength) printf("##########################\n### Congratulations!!! ###\n##########################\n");
     else printf("실패! 정답은 %s입니다.\n", targetWord);
 
     sleep(2);

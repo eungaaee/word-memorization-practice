@@ -164,9 +164,18 @@ void game() {
     }
 
     // game done
-    // TODO: update message one more time
-    if (revealed == targetLength) printf("##########################\n### Congratulations!!! ###\n##########################\n");
-    else printf("실패! 정답은 %s입니다.\n", targetWord);
+    // update message one more time
+    system("clear");
+    printf(">> 영어 단어 암기 프로그램 : 게임 <<\n");
+    printf("(힌트) %s\n\n", hint);
+
+    printf("------------------------+\n");
+    print_wrong_indicator(wrongCnt);
+
+    for (int i = 0; i < targetLength; i++) printf("%c ", inputField[i]);
+
+    if (revealed == targetLength) printf("\n##########################\n### Congratulations!!! ###\n##########################\n");
+    else printf("\n실패! 정답은 %s입니다.\n", targetWord);
 
     sleep(2);
 

@@ -35,8 +35,8 @@ const struct {
       {"six", "여섯"}, {"seven", "일곱"}, {"eight", "여덟"}, {"nine", "아홉"}, {"ten", "열"} },
     
     // 7일차
-    { {"hello", "안녕하세요"}, {"thank you", "감사합니다"}, {"goodbye", "안녕히 가세요"}, {"sorry", "죄송합니다"}, {"please", "부탁합니다"},
-      {"yes", "네"}, {"no", "아니오"}, {"maybe", "아마도"}, {"excuse me", "실례합니다"}, {"welcome", "환영합니다"} }
+    { {"carrot", "당근"}, {"potato", "감자"}, {"onion", "양파"}, {"cabbage", "양배추"}, {"lettuce", "상추"},
+        {"spinach", "시금치"}, {"broccoli", "브로콜리"}, {"pepper", "고추"}, {"cucumber", "오이"}, {"tomato", "토마토"} }
 };
 
 // shuffle array
@@ -74,7 +74,7 @@ static inline void print_wrong_indicator(int wrongCnt) {
     putchar('\n');
 }
 
-int check_char_in_target(const char *target, const int targetLength, const char c, char *const inputField, int *const revealed) {
+_Bool check_char_in_target(const char *target, const int targetLength, const char c, char *const inputField, int *const revealed) {
     _Bool found = 0;
 
     for (int i = 0; i < targetLength; i++) {
@@ -166,7 +166,7 @@ void game() {
     // game done
     // TODO: update message one more time
     if (revealed == targetLength) printf("#####################\n### Congratulations!!! ###\n#####################\n");
-    else printf(">> 실패! 정답은 %s입니다. <<\n", targetWord);
+    else printf("실패! 정답은 %s입니다.\n", targetWord);
 
     sleep(2);
 

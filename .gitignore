@@ -1,4 +1,5 @@
-*.pdf
 *.exe
 .vscode
 build
+result.*
+20241944_[12].zip

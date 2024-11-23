@@ -15,19 +15,19 @@ struct node {
 struct node *head = NULL;
 int dict_word_cnt = 0;
 
-struct node *create_node(struct eng_kor data) {
+struct node *create_node(struct eng_kor *data_ptr) {
 	struct node *new_node = (struct node *)malloc(sizeof(struct node));
 	
 	/* strcpy(new_node->data->eng, data.eng);
 	strcpy(new_node->data->kor, data.kor); */
-	new_node->data = data;
+	new_node->data = *data_ptr;
 	new_node->next = NULL;
 
 	return new_node;
 }
 
-void push_front(struct eng_kor data) {
-	struct node *new_node = create_node(data);
+void push_front(struct eng_kor *data_ptr) {
+	struct node *new_node = create_node(data_ptr);
 	
 	new_node->next = head;
 	head = new_node;
@@ -51,7 +51,7 @@ void initialize_dict() {
 
     struct eng_kor data;
     while (fscanf(dict_fp, "%s %s", data.eng, data.kor) != EOF) {
-		push_front(data);
+		push_front(&data);
 		dict_word_cnt++;
     }
 	
